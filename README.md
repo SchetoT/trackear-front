@@ -1,47 +1,57 @@
-# Astro Starter Kit: Minimal
+# TrackeAR
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Frontend y backend para consultar el seguimiento de envíos de distintas empresas desde una sola interfaz.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Descripción
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+TrackeAR centraliza consultas de tracking en una interfaz simple, clara y responsive.  
+Permite seleccionar una empresa, ingresar el número de seguimiento y visualizar el estado del envío y su historial cuando la empresa lo devuelve.
 
-## 🚀 Project Structure
+## Empresas soportadas
 
-Inside of your Astro project, you'll see the following folders and files:
+- Andreani
+- OCA
+- FAR
+- Correo Argentino Track & Trace Nacional
+- Paquetería e-commerce
+- Buspack
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Stack
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Frontend
+- Astro
+- React
+- CSS global propio
+- Framer Motion
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Backend
+- Node.js
+- Express
+- Axios
+- Cheerio
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Características
 
-## 🧞 Commands
+- Interfaz unificada para múltiples empresas
+- Diseño responsive
+- Dark mode
+- Historial local por empresa
+- Skeleton loader
+- Componentes de resultado adaptados por proveedor
+- Sanitización del HTML de Buspack
+- Backend con validación básica, rate limit y headers de seguridad
 
-All commands are run from the root of the project, from a terminal:
+## Estructura general
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Frontend
+```txt
+frontend-trackear/
+  public/
+    global.css
+    logos/
+  src/
+    components/
+    data/
+    layouts/
+    pages/
+    services/
