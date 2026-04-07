@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/layout.astro';
+import Header from '../components/header.astro';
+import HomePage from '../components/HomePage.jsx';
+import Footer from '../components/footer.astro';
+---
+
+<Layout title="TrackeAR | Seguimiento de envíos">
+  <div class="site-shell">
+    <Header />
+    <main class="site-main">
+      <HomePage client:load />
+    </main>
+    <Footer />
+  </div>
+</Layout>

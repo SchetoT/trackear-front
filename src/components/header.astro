@@ -1,0 +1,40 @@
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="/" class="brand" aria-label="Ir al inicio de TrackeAR">
+      <span class="brand-tracke">tracke</span><span class="brand-ar">AR</span>
+    </a>
+
+
+    <button
+      type="button"
+      class="theme-switch"
+      id="theme-switch"
+      aria-label="Cambiar tema"
+      title="Cambiar tema"
+    >
+      Modo oscuro
+    </button>
+  </div>
+</header>
+
+<script>
+  const root = document.documentElement;
+  const themeSwitch = document.getElementById('theme-switch');
+
+  const applyTheme = (theme) => {
+    root.setAttribute('data-theme', theme);
+    localStorage.setItem('trackear-theme', theme);
+
+    if (themeSwitch) {
+      themeSwitch.textContent = theme === 'dark' ? 'Modo claro' : 'Modo oscuro';
+    }
+  };
+
+  const savedTheme = localStorage.getItem('trackear-theme');
+  applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+
+  themeSwitch?.addEventListener('click', () => {
+    const currentTheme = root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+  });
+</script>
